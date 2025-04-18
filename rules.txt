@@ -1,0 +1,5 @@
+2 players game
+there will be history of each palyer win
+a pop up on start 
+a replay button 
+a roll dice for player x button

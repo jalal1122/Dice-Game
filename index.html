@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Dice Game</h1>
+    <div class="game-container">
+      <div class="players-div">
+        <div class="left">
+          <h2 contenteditable="true" id="p1Tag">Player 1</h2>
+          <div class="dice-img-div">
+            <img src="" alt="" id="diceImgP1" class="dice-img" />
+          </div>
+        </div>
+        <div class="right">
+          <h2 contenteditable="true" id="p2Tag">Player 2</h2>
+          <div class="dice-img-div">
+            <img src="" alt="" id="diceImgP2" class="dice-img" />
+          </div>
+        </div>
+      </div>
+      <div class="roll-dice-div">
+        <button id="rollDice">Roll Dice for Player 1</button>
+      </div>
+    </div>
+    <div class="score-div">
+      <div class="left-score-div">
+        <h2 id="scoreNameP1">Player 1 Score</h2>
+        <h1 class="scoreP1">0</h1>
+      </div>
+      <div class="right-score-div">
+        <h2 id="scoreNameP2">Player 2 Score</h2>
+        <h1 class="scoreP2">0</h1>
+      </div>
+    </div>
+    <div class="tint"></div>
+    <div class="start-div">
+      <div class="game-info">
+        <h2>Game Info</h2>
+        <p><strong>Player 1 </strong>: Roll the dice to get a score.</p>
+        <p><strong>Player 2 </strong>: Roll the dice to get a score.</p>
+        <p>The player with the highest score wins!</p>
+      </div>
+        <button class="start-button">Start Game</button>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
