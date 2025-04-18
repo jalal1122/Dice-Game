@@ -16,14 +16,14 @@ h1 {
   margin: 20px 0;
 }
 
-.tint{
-    background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+.tint {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .start-div {
@@ -42,6 +42,7 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  transition: all 0.5s;
 }
 
 .game-info {
@@ -162,12 +163,66 @@ h1 {
   display: none;
 }
 
-.players-div h2{
-    font-size: 2rem;
-    /* text-align: center; */
-    margin: 10px 0;
+.players-div h2 {
+  font-size: 2rem;
+  /* text-align: center; */
+  margin: 10px 0;
 }
 
-.players-div h2:focus{
-    outline: none;
+.players-div h2:focus {
+  outline: none;
+}
+
+.Player-1-win {
+  background-color: #19191a;
+  color: white;
+  padding: 20px;
+  height: 125px;
+  position: absolute;
+  top: 70%;
+  width: 100%;
+}
+
+.Player-1-win h1 {
+  animation: celebration 2s;
+}
+
+.Player-2-win h1 {
+  animation: celebration 2s;
+}
+
+.tie-game h1 {
+  animation: celebration 2s;
+}
+
+.Player-2-win {
+  background-color: #19191a;
+  color: white;
+  padding: 20px;
+  height: 125px;
+  position: absolute;
+  top: 70%;
+  width: 100%;
+}
+
+.tie-game {
+  background-color: #19191a;
+  color: white;
+  padding: 20px;
+  height: 125px;
+  position: absolute;
+  top: 70%;
+  width: 100%;
+}
+
+@keyframes celebration {
+  0% {
+    transform: translateX(-50%);
+  }
+}
+
+.Player-1-win,
+.Player-2-win,
+.tie-game {
+  display: none;
 }

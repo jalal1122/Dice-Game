@@ -15,6 +15,11 @@ let player2Name = document.getElementById("p2Tag");
 let scoreNameTagP1 = document.getElementById("scoreNameP1");
 let scoreNameTagP2 = document.getElementById("scoreNameP2");
 
+let p1GameWin = document.querySelector(".Player-1-win");
+let p2GameWin = document.querySelector(".Player-2-win");
+
+let gameTie = document.querySelector(".tie-game");
+
 let startButton = document.querySelector(".start-button");
 
 let isPlayer1Turn = true;
@@ -46,8 +51,10 @@ startButton.addEventListener("click", function () {
   document.querySelector(".tint").style.display = "none";
 });
 
-rollDicebtn.addEventListener("click", function () {
+rollDicebtn.addEventListener("click", function (event) {
   if (isPlayer1Turn) {
+    rollDicebtn.innerHTML = "Roll Dice for Player 1";
+
     player1Roll = Math.floor(Math.random() * 6) + 1;
     console.log("Player 1 rolled: " + player1Roll);
 
@@ -55,6 +62,8 @@ rollDicebtn.addEventListener("click", function () {
     player1DiceImg.src = getDiceImage(player1Roll);
     isPlayer1Turn = false;
   } else {
+    rollDicebtn.innerHTML = "Roll Dice for Player 1";
+
     player2Roll = Math.floor(Math.random() * 6) + 1;
     console.log("Player 2 rolled: " + player2Roll);
 
@@ -62,7 +71,7 @@ rollDicebtn.addEventListener("click", function () {
     player2DiceImg.src = getDiceImage(player2Roll);
     setTimeout(() => {
       checkWinner();
-    }, 3000);
+    }, 2000);
   }
 });
 
@@ -74,13 +83,21 @@ function checkWinner() {
   if (player1Roll !== 0 && player2Roll !== 0) {
     if (player1Roll > player2Roll) {
       player1Score++;
-      resetGame();
+      p1GameWin.style.display = "block";
+      setTimeout(() => {
+        resetGame();
+      }, 2000);
     } else if (player2Roll > player1Roll) {
       player2Score++;
-      resetGame();
+      p2GameWin.style.display = "block";
+      setTimeout(() => {
+        resetGame();
+      }, 2000);
     } else {
-      console.log("It's a tie!");
-      resetGame();
+      gameTie.style.display = "block";
+      setTimeout(() => {
+        resetGame();
+      }, 2000);
     }
   }
 
@@ -94,6 +111,10 @@ function resetGame() {
 
   player1DiceImg.style.display = "none";
   player2DiceImg.style.display = "none";
+
+  p1GameWin.style.display = "none";
+  p2GameWin.style.display = "none";
+  gameTie.style.display = "none";
 
   isPlayer1Turn = true;
 }
