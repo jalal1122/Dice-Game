@@ -226,3 +226,19 @@ h1 {
 .tie-game {
   display: none;
 }
+
+@media screen and (max-width: 650px) {
+  .players-div{
+    flex-direction: column;
+  }
+
+  .Player-1-win{
+    height: 175px;
+  }
+  .Player-2-win{
+    height: 175px;
+  }
+  .tie-game{
+    height: 175px;
+  }
+}

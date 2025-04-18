@@ -18,6 +18,9 @@ let scoreNameTagP2 = document.getElementById("scoreNameP2");
 let p1GameWin = document.querySelector(".Player-1-win");
 let p2GameWin = document.querySelector(".Player-2-win");
 
+let congratsP1 = document.getElementById("congratsP1")
+let congratsP2 = document.getElementById("congratsP2")
+
 let gameTie = document.querySelector(".tie-game");
 
 let startButton = document.querySelector(".start-button");
@@ -28,10 +31,12 @@ let player2Roll = 0;
 
 player1Name.addEventListener("input", function () {
   scoreNameTagP1.textContent = player1Name.innerText;
+  congratsP1.textContent = `Congratulation ${player1Name.innerText}` 
 });
 
 player2Name.addEventListener("input", function () {
   scoreNameTagP2.textContent = player2Name.innerText;
+  congratsP2.textContent = `Congratulation ${player2Name.innerText}`
 });
 
 startButton.addEventListener("click", function () {
@@ -53,17 +58,14 @@ startButton.addEventListener("click", function () {
 
 rollDicebtn.addEventListener("click", function (event) {
   if (isPlayer1Turn) {
-    rollDicebtn.innerHTML = "Roll Dice for Player 1";
-
     player1Roll = Math.floor(Math.random() * 6) + 1;
     console.log("Player 1 rolled: " + player1Roll);
 
     player1DiceImg.style.display = "block";
     player1DiceImg.src = getDiceImage(player1Roll);
     isPlayer1Turn = false;
+    rollDicebtn.innerHTML = "Roll Dice for Player 2";
   } else {
-    rollDicebtn.innerHTML = "Roll Dice for Player 1";
-
     player2Roll = Math.floor(Math.random() * 6) + 1;
     console.log("Player 2 rolled: " + player2Roll);
 
@@ -117,4 +119,5 @@ function resetGame() {
   gameTie.style.display = "none";
 
   isPlayer1Turn = true;
+  rollDicebtn.innerHTML = "Roll Dice for Player 1";
 }
