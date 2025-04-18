@@ -74,10 +74,6 @@ h1 {
   transition: 0.1s;
 }
 
-.start-div {
-  /* display: none; */
-}
-
 .game-container {
   display: flex;
   flex-direction: column;
@@ -228,17 +224,17 @@ h1 {
 }
 
 @media screen and (max-width: 650px) {
-  .players-div{
+  .players-div {
     flex-direction: column;
   }
 
-  .Player-1-win{
+  .Player-1-win {
     height: 175px;
   }
-  .Player-2-win{
+  .Player-2-win {
     height: 175px;
   }
-  .tie-game{
+  .tie-game {
     height: 175px;
   }
 }
